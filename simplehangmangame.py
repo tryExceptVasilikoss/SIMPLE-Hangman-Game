@@ -36,26 +36,35 @@ def start():
 Which language would you like to play in?
 Press 'P' to play in Portuguese, or 'E' to play in English
 Press 'Q to quit.''')
+    
     global mode
     mode = input().upper()
+
     if mode == "P":
         clears()
         print("Você escolheu jogar em Português!")
+        
         time.sleep(0.5)
         playpt()
+
     elif mode == "E":
         clears()
         print("You chose to play in English!")
+        
         time.sleep(0.5)
         playen()
+    
     elif mode == "Q":
         print("Saindo do jogo...")
+        
         time.sleep(0.5)
+    
     if mode not in "PEQ":
         print("Invalid language, please try again.")
         notL += 1
         if notL >= 3:
             print("Muitas tentativas inválidas. Encerrando jogo.")
+            
         time.sleep(0.5)
         clears()
 
@@ -82,8 +91,10 @@ Pressione 'I' se quiser jogar o Modo Iniciante, 'M' para Médio, 'D' para Difíc
     if level == "I": 
         clears()
         time.sleep(0.5)
+        
         print("Você escolheu o Modo Iniciante!")
         time.sleep(0.5)
+        
         clears()
         time.sleep(0.5)
     
@@ -91,13 +102,15 @@ Pressione 'I' se quiser jogar o Modo Iniciante, 'M' para Médio, 'D' para Difíc
         clears()
         print("Você escolheu o Modo Médio!")
         time.sleep(0.5)
+        
         clears()
         time.sleep(0.5)
-
+        
     elif level == "D":
          clears()
          print("Você escolheu o Modo Difícil!")
          time.sleep(0.5)
+        
          clears()
          time.sleep(0.5)
         
@@ -105,14 +118,17 @@ Pressione 'I' se quiser jogar o Modo Iniciante, 'M' para Médio, 'D' para Difíc
         clears()
         print("Você escolheu o Modo Expert!")
         time.sleep(0.5)
+        
         clears()
         time.sleep(0.5)
         
     else:
         clears()
         print(f"{level} não é um modo válido, tente novamente.")
+        
         time.sleep(0.5)
         playpt()
+
     clears()
     time.sleep(0.5)
     game()
@@ -124,6 +140,7 @@ Press 'S' if you want to play in Starter level, 'A' for Average, 'H' for Hard, a
 1. There are no proper nouns.
 2. There are no conjugated verbs.
 3. There are no plural words.''')
+    
     global level
     level = input().upper()
     time.sleep(0.5)
@@ -137,25 +154,28 @@ Press 'S' if you want to play in Starter level, 'A' for Average, 'H' for Hard, a
     if level == "S":
         clears()
         print("You chose Starter Mode!")
+        
         time.sleep(0.5)
         clears()         
 
     elif level == "A": 
         clears()
         print("You chose Average Mode!")
+        
         time.sleep(0.5)
         clears()       
 
     elif level == "H":
         clears()
         print("You chose Hard Mode!")
+        
         time.sleep(0.5)
-        clears()
-         
+        clears()    
 
     elif level == "E":
         clears()
         print("You chose Expert Mode!")
+        
         time.sleep(0.5)
         clears()      
     
@@ -163,6 +183,7 @@ Press 'S' if you want to play in Starter level, 'A' for Average, 'H' for Hard, a
         clears()
         print(f"{level} is not a valid mode, please try again.")
         playen()
+
     clears()
     time.sleep(0.5)
     game()
@@ -173,26 +194,31 @@ def tryagain_pt():
     print('''Deseja tentar novamente na mesma dificuldade, ou deseja alterá-la?
 Se sim, digite 'S'. Se caso quiser alterar, digite 'N'.''')
     lagain = input().upper()
+    
     if lagain == "N" :
         usedL.clear()
         underlines.clear()
         letters.clear()
         word = ''
         playpt()
+        
     elif lagain == "S" :
         usedL.clear()
         underlines.clear()
         letters.clear()
         word = ''
         game()
+        
     else:
         clears()
         print("Opção inválida, tente novamente.")
         counter_pt += 1
+        
         if counter_pt >= 3:
             print("Muitas tentativas inválidas. Encerrando jogo.")
             exit("Jogo encerrado!")
         time.sleep(0.5)
+        
         clears()
         tryagain_pt()
 
@@ -200,22 +226,28 @@ def tryagain_en():
     global lagain, word, counter_en
     clears()
     time.sleep(0.5)
+    
     print('''Do you want to try again at the same difficulty, or do you want to change it?
 If yes, type 'Y'. If you want to change it, type 'N'.''')
     lagain = input().upper()
+    
     if lagain == "N" :
         clearv()
         playen()
+        
     elif lagain == "Y" :
         clearv()
         game()
+        
     else:
         clears()
         print("Invalid option, please try again.")
         counter_en += 1
+        
         if counter_en >= 3 :
             print("Too many invalid attempts. Ending game.")
             exit("Game ended!")
+            
         time.sleep(0.5)
         clears()
         tryagain_en()
@@ -223,6 +255,7 @@ If yes, type 'Y'. If you want to change it, type 'N'.''')
 def game():
     tries = 6
     global lagain
+    
     if level == "I" and mode == "P": 
         word = random.choice(pt_starter)
         letters = list(word.upper())
@@ -247,19 +280,16 @@ def game():
         word = random.choice(en_starter)
         letters = list(word.upper())
         underlines = list("_"*len(letters))
-         
-
+    
     elif level == "A" and mode == "E": 
         word = random.choice(en_average)
         letters = list(word.upper())
         underlines = list("_"*len(letters))
-         
 
     elif level == "H" and mode == "E":
         word = random.choice(en_hard)
         letters = list(word.upper())
         underlines = list("_"*len(letters))
-         
 
     elif level == "E" and mode == "E":
         word = random.choice(en_expert)
@@ -273,6 +303,7 @@ def game():
             print("Tentativas restantes:", tries)
             print("Letras usadas:", *usedL)
             l = input("Digite uma letra: ").upper()
+            
             if l in usedL :
                 clears()
                 print("Você já usou essa letra! Tente outra.")
@@ -281,38 +312,45 @@ def game():
             if len(l) > 1:
                 clears()
                 continue
-
-
+                
             else:
                 usedL.append(l.upper())
                 clears()
+        
             if l.isalpha():
                 if l in letters:
                     for i, letter in enumerate(letters):
                         if l == letter.upper():
                             underlines[i] = l
-                            
+                         
                 else:
                     tries -= 1
+                    
             else: 
                 clears()
                 print("Letra inválida, tente novamente.")
                 tries -= 1
                 continue
+                
             if underlines == letters and tries > 0:
                 print("Palavra:", *underlines)
                 print("Tentativas restantes:", tries)
                 print("Letras usadas:", *usedL)
                 print(f"Parabéns! Você acertou! A palavra é {word.title()}!")
                 time.sleep(2)
+                
                 clears()
+                
                 print('''Quer jogar novamente?
 Se sim, digite 'S'. Se não, digite 'N'.''')
                 lagain = input().upper()
+                
                 if lagain == "N" : 
                     exit("Jogo encerrado!")
+                    
                 elif lagain == "S" :
                     tryagain_pt()  
+                    
                 break
 
             elif tries == 0 :
@@ -324,10 +362,13 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
                 print('''Quer tentar novamente?
 Se sim, digite 'S'. Se não, digite 'N'.''')
                 lagain = input().upper()
+                
                 if lagain == "N": 
                     exit("Jogo encerrado!")
+                    
                 elif lagain == "S" :
                     tryagain_pt()
+            
                 break         
 
     elif mode == "E" :
@@ -342,6 +383,7 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
                 clears()
                 print("You already used this letter! Try another one.")
                 continue
+                
             if len(l) > 1:
                 clears()
                 continue
@@ -349,6 +391,7 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
             else:
                 usedL.append(l.upper())
                 clears() 
+                
             if l.isalpha():
                 if l in letters:
                     for i, letter in enumerate(letters):
@@ -363,20 +406,25 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
                 clears()
                 print("Invalid letter, please try again.")
                 continue
+                
             if underlines == letters and tries > 0:
                 print("Word:", *underlines)
                 print("Remaining attempts:", tries)
                 print("Letters used:", *usedL)
                 print(f"Congratulations! You got it right! The word is {word.title()}!")
                 time.sleep(2)
+                
                 clears()
                 print('''Do you want to play again?
 If yes, type 'Y'. If no, type 'N'.''')
                 lagain = input().upper()
+                
                 if lagain == "N": 
                     exit("Game ended!")
+                    
                 elif lagain == "Y" :
                     tryagain_en()
+                    
                 break
 
             if tries == 0 :
@@ -388,10 +436,13 @@ If yes, type 'Y'. If no, type 'N'.''')
                 print('''Do you want to try again?
 If yes, type 'Y'. If no, type 'N'.''')
                 lagain = input().upper()
+                
                 if lagain == "N": 
                     exit("Game over!")
+                    
                 elif lagain == "Y" :
                     tryagain_en()
+                    
                 break
 
 # --------------------------------------------------------------------------
@@ -466,4 +517,3 @@ while True:
     break
 
 # “Todos nascemos originais, mas muitos de nós morremos como fotocópias.”.. seja diferente!
-
