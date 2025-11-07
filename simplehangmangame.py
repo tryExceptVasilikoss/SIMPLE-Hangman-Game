@@ -429,37 +429,38 @@ pt_expert = [
 # Inglês (English)
 
 # 🟢 Nível Iniciante em Inglês [3 a 6 letras] (🟢 Starter Level in English [3 to 6 letters])
-en_starter = (
+en_starter = [
 "cat", "dog", "sun", "tree", "book", "house", "river", "cloud", "chair", "light", "apple", "smile", "water", "bread", 
 "happy", "music", "green", "stone", "plane", "train", "mouse", "flower", "dream", "heart", "phone"
-)
+]
 
 # 🟡 Nível Médio em Inglês [7 a 9 letras] (🟡 Average level in English [7 to 9 letters])
-en_average = (
+en_average = [
 "mountain", "elephant", "triangle", "computer", "dinosaur", "butterfly", "sandwich", "painting", "language", "notebook",
 "umbrella", "adventure", "chocolate", "backpack", "festival", "beautiful", "diamond", "hospital", "strategy", "invisible",
 "calendar", "discovery", "fantastic", "alligator", "important"
-)
+]
 
 # 🔴 Nível Difícil em Inglês [10 a 13 letras] (🔴 Hard Level in English [10 to 13 letters])
-en_hard = (
+en_hard = [
 "imagination", "environment", "relationship", "extraordinary", "conversation", "understanding", "responsibility", "psychology",
 "mathematics", "communication", "consequence", "development", "friendship", "appreciation", "management", "transportation",
 "infrastructure", "technology", "organization", "presentation", "international", "opportunity", "conservation",
 "determination", "circumference"
-)
+]
 
 # ⚫ Nível Expert em Inglês [14 a 20 letras] (⚫ Expert level in English [14 to 20 letters])
-en_expert = (
+en_expert = [
 "unquestionable", "incompatibility", "disproportionate", "misinterpretation", "counterproductive", "oversimplification",
 "intercontinental", "environmentalist", "hyperconnectivity", "reindustrialization", "miscommunication", "counterintelligence",
 "unconstitutional", "extraordinarily", "uncharacteristic", "interdisciplinary", "misunderstanding", "counterterrorism",
 "disenfranchisement", "multidimensional", "overrepresentation", "reconceptualization", "interrelationship",
 "uncontrollability", "superconductivity"
-)
+]
 
 # Início (Start)
 while True:
     start()
     break
+
 # “Todos nascemos originais, mas muitos de nós morremos como fotocópias.”.. seja diferente!
