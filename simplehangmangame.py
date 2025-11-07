@@ -295,6 +295,7 @@ def game():
                 else:
                     tries -= 1
             else: 
+                clears()
                 print("Letra inválida, tente novamente.")
                 tries -= 1
                 continue
@@ -359,6 +360,7 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
                     clears()
 
             else: 
+                clears()
                 print("Invalid letter, please try again.")
                 continue
             if underlines == letters and tries > 0:
