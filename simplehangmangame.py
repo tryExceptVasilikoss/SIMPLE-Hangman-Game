@@ -304,7 +304,7 @@ def game():
                 print("Tentativas restantes:", tries)
                 print("Letras usadas:", *usedL)
                 print(f"Parabéns! Você acertou! A palavra é {word.title()}!")
-                time.sleep(0.5)
+                time.sleep(2)
                 clears()
                 print('''Quer jogar novamente?
 Se sim, digite 'S'. Se não, digite 'N'.''')
@@ -368,7 +368,7 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
                 print("Remaining attempts:", tries)
                 print("Letters used:", *usedL)
                 print(f"Congratulations! You got it right! The word is {word.title()}!")
-                time.sleep(0.5)
+                time.sleep(2)
                 clears()
                 print('''Do you want to play again?
 If yes, type 'Y'. If no, type 'N'.''')
@@ -466,3 +466,4 @@ while True:
     break
 
 # “Todos nascemos originais, mas muitos de nós morremos como fotocópias.”.. seja diferente!
+
