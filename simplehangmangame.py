@@ -308,28 +308,21 @@ def game():
                 clears()
                 print("Você já usou essa letra! Tente outra.")
                 continue
-
-            if len(l) > 1:
-                clears()
-                continue
                 
-            else:
-                usedL.append(l.upper())
-                clears()
-        
             if l.isalpha():
                 if l in letters:
                     for i, letter in enumerate(letters):
                         if l == letter.upper():
                             underlines[i] = l
-                         
-                else:
+                            usedL.append(l.upper())
+                            clears()
+    
+                elif l.isalpha() and len(l) == 1 and l not in letters:
                     tries -= 1
                     
-            else: 
+            if l.isalpha() == False or len(l) > 1: 
                 clears()
                 print("Letra inválida, tente novamente.")
-                tries -= 1
                 continue
                 
             if underlines == letters and tries > 0:
@@ -383,26 +376,19 @@ Se sim, digite 'S'. Se não, digite 'N'.''')
                 clears()
                 print("You already used this letter! Try another one.")
                 continue
-                
-            if len(l) > 1:
-                clears()
-                continue
             
-            else:
-                usedL.append(l.upper())
-                clears() 
-                
             if l.isalpha():
                 if l in letters:
                     for i, letter in enumerate(letters):
                         if l == letter.upper():
                             underlines[i] = l
-                            
-                else:
+                            usedL.append(l.upper())
+                            clears()
+    
+                elif l.isalpha() and len(l) == 1 and l not in letters:
                     tries -= 1
-                    clears()
-
-            else: 
+                    
+            if l.isalpha() == False or len(l) > 1: 
                 clears()
                 print("Invalid letter, please try again.")
                 continue
